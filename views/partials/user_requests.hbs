@@ -26,7 +26,7 @@
 
       <tr class="leave-request-row">
         <td data-tom-leave-dates="1">{{> leave_dates leave=this}}</td>
-        <td>{{ this.leave_type.name }}{{#if this.is_pended_revoke_leave}}<br>(in attesa di revoca){{/if}}</td>
+        <td>{{ this.leave_type.name }}{{#if this.is_pended_revoke_leave}}<br>(in attesa di cancellazione){{/if}}</td>
         <td>{{ this.get_deducted_days_number }}</td>
         <td class="user-request-table-approver">{{#with this.approver}}{{this.full_name}}{{/with}}</td>
         <td>
@@ -34,7 +34,7 @@
           {{# unless this.is_pended_revoke_leave}}
           <form method="post" action="/requests/revoke/">
             <input type="hidden" value="{{this.id}}" name="request">
-            <button type="submit" class="pull-right btn btn-default btn-xs revoke-btn" title="Revoca richiesta di ferie. Soggetto ad approvazione."><i class="fa fa-trash"> Revoca</i></button>
+            <button type="submit" class="pull-right btn btn-default btn-xs revoke-btn" title="Cancella richiesta di ferie. Soggetto ad approvazione."><i class="fa fa-trash"> Cancella</i></button>
           </form>
           {{/unless}}
           {{else}}

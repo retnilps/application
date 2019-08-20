@@ -21,10 +21,10 @@
           data-placement="top"
           title="
             {{#if ../../day.is_current_day}}Today{{/if}}
-            {{#if this.is_new_leave}}New absence waiting approval{{/if}}
-            {{#if this.is_pended_revoke_leave}}Revoked waiting for approval{{/if}}
+            {{#if this.is_new_leave}}Nuova assenza in attesa di approvazione{{/if}}
+            {{#if this.is_pended_revoke_leave}}Richiesta di cancellazione in attesa di approvazione{{/if}}
             {{#if this.is_approved_leave}}
-              {{#unless this.is_pended_revoke_leave}}Approved absence{{/unless}}
+              {{#unless this.is_pended_revoke_leave}}Assenza approvata{{/unless}}
             {{/if}}"
         {{/if}}
       {{/with}}
@@ -34,13 +34,13 @@
   {{#if day.is_current_day}}
     data-toggle="tooltip"
     data-placement="top"
-    title="Today"
+    title="Oggi"
   {{/if}}
 
   {{#if day.is_bank_holiday}}
     data-toggle="tooltip"
     data-placement="top"
-    title="Bank holiday: {{day.bank_holiday_name}}"
+    title="Festività: {{day.bank_holiday_name}}"
   {{/if}}
 
 >{{day.val}}</span>
