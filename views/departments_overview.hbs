@@ -1,14 +1,14 @@
 
 {{> header }}
 
-<h1>Departments</h1>
+<h1>Reparti</h1>
 
 {{> show_flash_messages }}
 
 <div class="row">
-  <div class="col-md-4 lead">All departments</div>
+  <div class="col-md-4 lead">Tutti i reparti</div>
   <div class="col-md-4 col-md-offset-4">
-    <button class="btn btn-info pull-right" data-toggle="modal" data-target="#add_new_department_modal" type="button" id="add_new_department_btn">Add new department</button>
+    <button class="btn btn-info pull-right" data-toggle="modal" data-target="#add_new_department_modal" type="button" id="add_new_department_btn">Aggiungi nuovo reparto</button>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
 
 {{# unless departments.length }}
 <div class="row">
-    <div class="col-md-4">No department records</div>
+    <div class="col-md-4">Nessun reparto presente</div>
 </div>
 {{/unless}}
 
@@ -28,14 +28,14 @@
     <table class="table table-hover">
       <thead>
         <tr>
-          <th>Name</th>
+          <th>Nome</th>
           <th>Manager</th>
-          <th>Allowance</th>
-          <th>Number Employees</th>
-          <th>Public Holidays
+          <th>Giorni di ferie</th>
+          <th>Numero di dipendenti</th>
+          <th>Festività nazionali
             <button type="button"
               class="btn btn-xs btn-link"
-              data-content="If set to YES, employees from department have Bank Holidays added on top of their allowance"
+              data-content="Se impostato a Sì, i dipendenti del reparto hanno in aggiunta al numero di ferie previste anche le festività nazionali"
               data-placement="top"
               data-toggle="popover"
               data-trigger="focus hover"
@@ -46,7 +46,7 @@
           <th>Accrued Allowance
             <button type="button"
               class="btn btn-xs btn-link"
-              data-content="If set to YES, holiday allowance starts to build up - or accrue - from the first day of employment. It accrues in proportion to the annual entitlement. E.g. an employee in the ninth month of employment would have built up 9/12ths (or three-quarters) of annual entitlement."
+              data-content="Se impostato a Sì, i giorni di ferie iniziano ad accumularsi in proporzione al periodo dell'anno in cui inizia il rapporto di lavoro. Es: Un dipendente nel 9° mese di assunzione ha maturato 9/12 (quindi 3/4) del monte ferie annuale"
               data-placement="top"
               data-toggle="popover"
               data-trigger="focus hover"
@@ -66,8 +66,8 @@
             {{#each ../allowance_options}}{{#if_equal this.value ../allowance}}{{caption}}{{/if_equal}}{{/each}}
           </td>
           <td><a href="/users/?department={{ this.id }}">{{this.users.length}}</a></td>
-          <td>{{# if this.include_public_holidays }}Yes{{/if}}</td>
-          <td>{{# if this.is_accrued_allowance }}Yes{{/if}}</td>
+          <td>{{# if this.include_public_holidays }}Sì{{/if}}</td>
+          <td>{{# if this.is_accrued_allowance }}Sì{{/if}}</td>
           <td><a href="/settings/departments/edit/{{this.id}}/" class="btn btn-link btn-xs pull-right"><span class="fa fa-chevron-right"></span></a></td>
         </tr>
         {{/each}}

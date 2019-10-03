@@ -25,7 +25,7 @@
     <label for="select_inp" class="control-label">Reparto</label>
     <select class="form-control" id="select_inp" name="department" aria-describedby="department_help">
       {{#each company.departments}}
-          <option value="{{this.id}}" {{#if_equal ../employee.DepartmentId this.id}} selected="selected"{{/if_equal}}>{{this.name}} (approver {{this.boss.name}} {{this.boss.lastname}})</option>
+          <option value="{{this.id}}" {{#if_equal ../employee.DepartmentId this.id}} selected="selected"{{/if_equal}}>{{this.name}} (approvatore {{this.boss.name}} {{this.boss.lastname}})</option>
       {{/each}}
     </select>
     <span id="department_help" class="help-block">Reparto di cui fa parte l'utente. <a href="/settings/departments/edit/{{employee.DepartmentId}}">Maggiori dettagli <i class="fa fa-angle-double-right"></i></a></span>
