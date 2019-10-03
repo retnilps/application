@@ -1,13 +1,13 @@
 
 {{> header }}
 
-<h1>{{employee.name}} {{employee.lastname}}'s details</h1>
+<h1>Dettagli di {{employee.name}} {{employee.lastname}}</h1>
 
 <div class="row">
-    <div class="col-md-3 lead">Employee details</div>
+    <div class="col-md-3 lead">Dettagli dipendente</div>
     <form id="add_new_user_frm" method="post" action="/users/delete/{{employee.id}}/">
         <div class="col-md-1 col-md-offset-8">
-        <button id="remove_btn" type="submit" class="pull-right btn btn-danger" data-toggle="tooltip" data-placement="top" title="Remove employee"><i class="fa fa-trash"></i> Delete</button>
+        <button id="remove_btn" type="submit" class="pull-right btn btn-danger" data-toggle="tooltip" data-placement="top" title="Rimuovi il dipendente"><i class="fa fa-trash"></i> Elimina</button>
         </div>
     </form>
 </div>
@@ -17,9 +17,9 @@
 {{> show_flash_messages }}
 
 <div class="col-md-3 list-group">
-  <a href="/users/edit/{{employee.id}}/" class="list-group-item{{# if show_main_tab }} selected-item{{/if}}">General details</a>
-  <a href="/users/edit/{{employee.id}}/schedule/" class="list-group-item {{# if show_schedule_tab }} selected-item{{/if}}">Schedule</a>
-  <a href="/users/edit/{{employee.id}}/absences/" class="list-group-item{{# if show_absence_tab }} selected-item{{/if}}">Absences</a>
+  <a href="/users/edit/{{employee.id}}/" class="list-group-item{{# if show_main_tab }} selected-item{{/if}}">Dettagli generali</a>
+  <a href="/users/edit/{{employee.id}}/schedule/" class="list-group-item {{# if show_schedule_tab }} selected-item{{/if}}">Settimana lavorativa</a>
+  <a href="/users/edit/{{employee.id}}/absences/" class="list-group-item{{# if show_absence_tab }} selected-item{{/if}}">Ferie</a>
 </div>
 
 {{# if show_absence_tab }}
