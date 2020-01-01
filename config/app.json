@@ -1,6 +1,7 @@
 {
-  "allow_create_new_accounts" : true,
+  "allow_create_new_accounts" : false,
   "send_emails"              : false,
+  "default_email_suffix" : "test.com",
   "application_sender_email" : "email@test.com",
   "email_transporter" : {
     "host" : "localhost",
